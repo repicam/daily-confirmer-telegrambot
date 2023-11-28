@@ -1,6 +1,6 @@
-const mongoose = require( 'mongoose' )
+import { Schema, model } from 'mongoose'
 
-const commandSchema = new mongoose.Schema( {
+const commandSchema = new Schema( {
   command: {
     type: String,
     required: true
@@ -14,4 +14,4 @@ const commandSchema = new mongoose.Schema( {
   timestamps: true
 } )
 
-module.exports = mongoose.model( 'Command', commandSchema )
+export const Command = model( 'Command', commandSchema )

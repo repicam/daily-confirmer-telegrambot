@@ -1,6 +1,6 @@
-const Command = require( '../models/commandModel.js' )
+import { Command } from '../models/commandModel.js'
 
-const getCommands = async () => {
+export const getCommands = async () => {
   const commandsFind = await Command.find()
   let commandList = []
   commandsFind.forEach( cmd => {
@@ -9,21 +9,14 @@ const getCommands = async () => {
   return commandList
 }
 
-const findCommand = async ( command ) => {
+export const findCommand = async ( command ) => {
   return await Command.find( { command } )
 }
 
-const createCommand = async ( command ) => {
+export const createCommand = async ( command ) => {
   return await Command.create( { command } )
 }
 
-const deleteCommand = async ( command ) => {
+export const deleteCommand = async ( command ) => {
   return await Command.deleteOne( { command } )
-}
-
-module.exports = {
-  getCommands,
-  findCommand,
-  createCommand,
-  deleteCommand
 }
