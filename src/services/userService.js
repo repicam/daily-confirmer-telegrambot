@@ -1,13 +1,19 @@
-import { User } from '../models/userModel.js'
+const User = require( '../models/userModel.js' )
 
-export const altaUsuario = async ( chatId, username ) => {
+const altaUsuario = async ( chatId, username ) => {
   return await User.create( { chatId, username } )
 }
 
-export const buscarUsuario = async ( chatId ) => {
+const buscarUsuario = async ( chatId ) => {
   return await User.findOne( { chatId } )
 }
 
-export const listaUsuarios = async () => {
+const listaUsuarios = async () => {
   return await User.find()
+}
+
+module.exports = {
+  altaUsuario,
+  buscarUsuario,
+  listaUsuarios
 }

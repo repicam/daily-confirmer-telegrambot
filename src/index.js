@@ -1,13 +1,13 @@
-import dotenv from 'dotenv'
+const dotenv = require( 'dotenv' )
 dotenv.config()
 
-import { connectDB } from './config/db.js'
+const { connectDB } = require( './config/db.js' )
 connectDB()
 
-import TelegramBot from 'node-telegram-bot-api'
-import { altaUsuario, buscarUsuario, listaUsuarios } from './services/userService.js'
-import { getStartMessage } from './services/chatService.js'
-import { createCommand, deleteCommand, findCommand, getCommands } from './services/commandService.js'
+const TelegramBot = require( 'node-telegram-bot-api' )
+const { altaUsuario, buscarUsuario, listaUsuarios } = require( './services/userService.js' )
+const { getStartMessage } = require( './services/chatService.js' )
+const { createCommand, deleteCommand, findCommand, getCommands } = require( './services/commandService.js' )
 
 const bot = new TelegramBot( process.env.TELEGRAM_BOT_TOKEN, { polling: true } )
 
