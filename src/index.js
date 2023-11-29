@@ -64,7 +64,7 @@ bot.on( 'message', async ( msg ) => {
         bot.sendMessage( user.chatId, `${ username } ha dado ${ text }` )
       } )
     } else {
-      bot.sendMessage( chatId, `Has ejecutado ${ text }` )
+      bot.sendMessage( chatId, `Has activado ${ text }` )
     }
   }
 } )
