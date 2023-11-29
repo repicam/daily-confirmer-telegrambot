@@ -1,13 +1,13 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
-import { connectDB } from './config/db.js'
+import { connectDB } from './config/db.mjs'
 connectDB()
 
 import TelegramBot from 'node-telegram-bot-api'
-import { altaUsuario, buscarUsuario, listaUsuarios } from './services/userService.js'
-import { getStartMessage } from './services/chatService.js'
-import { createCommand, deleteCommand, findCommand, getCommands } from './services/commandService.js'
+import { altaUsuario, buscarUsuario, listaUsuarios } from './services/userService.mjs'
+import { getStartMessage } from './services/chatService.mjs'
+import { createCommand, deleteCommand, findCommand, getCommands } from './services/commandService.mjs'
 
 const bot = new TelegramBot( process.env.TELEGRAM_BOT_TOKEN, { polling: true } )
 
@@ -64,7 +64,7 @@ bot.on( 'message', async ( msg ) => {
         bot.sendMessage( user.chatId, `${ username } ha dado ${ text }` )
       } )
     } else {
-      bot.sendMessage( chatId, `Has ejecutado ${ text }` )
+      bot.sendMessage( chatId, `Has activado ${ text }` )
     }
   }
 } )

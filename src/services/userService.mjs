@@ -1,4 +1,4 @@
-import { User } from '../models/userModel.js'
+import { User } from '../models/userModel.mjs'
 
 export const altaUsuario = async ( chatId, username ) => {
   return await User.create( { chatId, username } )

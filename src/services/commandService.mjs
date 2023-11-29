@@ -1,4 +1,4 @@
-import { Command } from '../models/commandModel.js'
+import { Command } from '../models/commandModel.mjs'
 
 export const getCommands = async () => {
   const commandsFind = await Command.find()
